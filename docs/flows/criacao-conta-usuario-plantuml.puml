@@ -1,0 +1,20 @@
+@startuml Criação de Conta de Usuário
+start
+
+:Usuário acessa página de cadastro;
+
+repeat
+  :Usuário preenche formulário;
+  :Usuário submete formulário;
+repeat while (Sistema valida informações?) is (Incorretas ou Incompletas) not (Corretas)
+  -> Incorretas ou Incompletas;
+  :Sistema exibe mensagens de erro;
+  :Usuário permanece na página;
+
+:Sistema cria conta no banco de dados;
+:Sistema gera registro de confirmação;
+:Sistema envia e-mail de confirmação;
+:Sistema exibe mensagem de sucesso;
+
+stop
+@enduml
